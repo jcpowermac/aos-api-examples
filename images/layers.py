@@ -32,7 +32,7 @@ def main():
     url = "https://origin-master1.virtomation.com:8443/oapi/v1/images"
 
     results = aosget(url, token)
-    pp.pprint( json.dumps(results) )
+    pp.pprint( json.dumps(results['items'][5]  ) )
 
 if __name__ == '__main__':
     main()
