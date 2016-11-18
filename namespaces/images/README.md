@@ -1,6 +1,8 @@
 # ImageStreamImage - Layers
 
 
+The Dockerfile doesn't need to run just build so we can see the layers.
+
 
 ```json
 {
