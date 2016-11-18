@@ -40,8 +40,10 @@ def aosget(url, token):
     req = requests.get(url, headers=headers, verify=False)
 
     if req.status_code == 200:
+        print "here"
         json = req.json()
         return json
+    print req.text
     return {}
 
 
@@ -50,11 +52,12 @@ def main():
     pp = pprint.PrettyPrinter(indent=4)
     token = gettoken()
 
-    url = "https://origin-master1.virtomation.com:8443/oapi/v1/namespaces/cake/pods"
+    url = "https://origin-master1.virtomation.com:8443/api/v1/namespaces/cake/pods"
+    #url = "https://origin-master1.virtomation.com:8443/oapi/v1/projects/cake/pods"
 
-    results = aosget(url, token)
+    results = aosget_text(url, token)
     
-    pp.pprint(results)
+    print results 
 
 
 
